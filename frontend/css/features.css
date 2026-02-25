@@ -1,0 +1,524 @@
+/* ═══════════════════════════════════════════
+   PROJECT FILTER BAR
+   ═══════════════════════════════════════════ */
+
+.filter-bar {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 0 60px 24px;
+    align-items: center;
+}
+
+.filter-btn {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #bbb;
+    padding: 7px 18px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    font-family: var(--font-body);
+    letter-spacing: 0.3px;
+}
+
+.filter-btn:hover {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+.filter-btn.active {
+    background: var(--red);
+    border-color: var(--red);
+    color: #fff;
+    box-shadow: 0 0 16px rgba(229, 9, 20, 0.4);
+}
+
+/* ── Stats Counter (About page) ── */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 0 60px 36px;
+    margin-top: 8px;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 28px 16px;
+    background: #111;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.stat-item:hover {
+    transform: translateY(-4px);
+    border-color: rgba(229, 9, 20, 0.3);
+}
+
+.stat-number {
+    font-family: var(--font-title);
+    font-size: 3.6rem;
+    color: var(--red);
+    line-height: 1;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 2px;
+}
+
+.stat-number sup {
+    font-size: 1.6rem;
+}
+
+.stat-label {
+    font-size: 0.82rem;
+    color: #888;
+    margin-top: 8px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+/* ── Resume Timeline ── */
+.timeline {
+    padding: 0 80px 60px;
+    position: relative;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 100px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--red), transparent);
+    border-radius: 2px;
+}
+
+.timeline-year {
+    font-family: var(--font-title);
+    font-size: 1.4rem;
+    color: var(--red);
+    margin: 32px 0 8px;
+    padding-left: 20px;
+    opacity: 0.8;
+}
+
+.timeline-item {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+    padding: 16px 0 16px 40px;
+    position: relative;
+    margin-left: 20px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 22px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--red);
+    box-shadow: 0 0 0 4px rgba(229, 9, 20, 0.2);
+    flex-shrink: 0;
+}
+
+.timeline-card {
+    flex: 1;
+    background: #141414;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 12px;
+    padding: 20px 24px;
+    transition: border-color 0.3s, transform 0.3s;
+    cursor: pointer;
+}
+
+.timeline-card:hover {
+    border-color: rgba(229, 9, 20, 0.4);
+    transform: translateX(6px);
+}
+
+.timeline-card-emoji {
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.timeline-card h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 4px;
+}
+
+.timeline-card p {
+    font-size: 0.82rem;
+    color: #888;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.timeline-card-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.timeline-card-tags span {
+    background: rgba(229, 9, 20, 0.12);
+    border: 1px solid rgba(229, 9, 20, 0.25);
+    color: #ff6b6b;
+    font-size: 0.68rem;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+/* ── Download Resume button ── */
+.resume-header {
+    padding: 32px 60px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.resume-header h2 {
+    font-family: var(--font-title);
+    font-size: 2.4rem;
+}
+
+.download-resume-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, var(--red), #b20710);
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: var(--font-body);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.download-resume-btn::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 40%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.15);
+    transform: skewX(-20deg);
+    transition: left 0.5s ease;
+}
+
+.download-resume-btn:hover::before {
+    left: 130%;
+}
+
+.download-resume-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(229, 9, 20, 0.45);
+}
+
+.download-resume-btn .dl-icon {
+    font-size: 1.1rem;
+    animation: dlBounce 2s ease-in-out infinite;
+}
+
+@keyframes dlBounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(3px);
+    }
+}
+
+/* ── Bottom Mobile Navigation ── */
+#bottom-nav {
+    display: none;
+    position: fixed;
+    bottom: 72px;
+    /* Above activity bar */
+    left: 0;
+    right: 0;
+    background: rgba(10, 10, 10, 0.96);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    z-index: 6900;
+    padding: 8px 0 12px;
+}
+
+.bottom-nav-grid {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.bnav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.2s;
+    border: none;
+    background: none;
+    color: #666;
+    flex: 1;
+}
+
+.bnav-item.active,
+.bnav-item:hover {
+    color: var(--red);
+}
+
+.bnav-icon {
+    font-size: 1.35rem;
+}
+
+.bnav-label {
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+}
+
+/* ── Cursor spotlight ── */
+#cursor-spotlight {
+    position: fixed;
+    pointer-events: none;
+    z-index: 0;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(229, 9, 20, 0.07) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s;
+    display: none;
+}
+
+/* ── Page transition sweep ── */
+.page-transition-overlay {
+    position: fixed;
+    inset: 0;
+    background: #0a0a0a;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.22s ease;
+}
+
+.page-transition-overlay.flash {
+    opacity: 0.6;
+}
+
+/* ── My Queue / Bookmarks ── */
+.queue-btn {
+    position: relative;
+}
+
+.queue-btn.queued {
+    color: var(--red) !important;
+}
+
+.queue-btn.queued::after {
+    content: '✓';
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    width: 14px;
+    height: 14px;
+    background: var(--red);
+    border-radius: 50%;
+    font-size: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+/* ── Keyboard shortcuts modal ── */
+#shortcuts-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 99000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    backdrop-filter: blur(4px);
+}
+
+#shortcuts-modal.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.shortcuts-box {
+    background: #161616;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 32px;
+    width: 420px;
+    max-width: 90vw;
+}
+
+.shortcuts-box h3 {
+    font-family: var(--font-title);
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--red);
+}
+
+.shortcut-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.85rem;
+    color: #bbb;
+}
+
+.shortcut-key {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    padding: 3px 10px;
+    font-family: monospace;
+    font-size: 0.8rem;
+    color: #fff;
+}
+
+.shortcuts-close {
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    background: var(--red);
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+}
+
+/* ── ? Help button ── */
+#help-btn {
+    position: fixed;
+    bottom: 88px;
+    right: 24px;
+    z-index: 6800;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #aaa;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    backdrop-filter: blur(8px);
+}
+
+#help-btn:hover {
+    background: var(--red);
+    color: #fff;
+    border-color: var(--red);
+}
+
+/* ── Pull-to-Refresh indicator ── */
+#ptr-indicator {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-60px);
+    background: var(--red);
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 0 0 20px 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    z-index: 9998;
+    transition: transform 0.3s ease;
+}
+
+#ptr-indicator.visible {
+    transform: translateX(-50%) translateY(0);
+}
+
+
+
+/* ── Responsive adjustments ── */
+@media (max-width: 768px) {
+    #bottom-nav {
+        display: block;
+    }
+
+    #help-btn {
+        bottom: 148px;
+    }
+
+    .filter-bar {
+        padding: 0 16px 20px;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 16px 24px;
+    }
+
+    .timeline {
+        padding: 0 20px 40px;
+    }
+
+    .timeline::before {
+        left: 28px;
+    }
+
+    .resume-header {
+        padding: 24px 16px 8px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stat-number {
+        font-size: 2.4rem;
+    }
+}

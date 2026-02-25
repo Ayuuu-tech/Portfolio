@@ -1,0 +1,141 @@
+/* ═══════════════════════════════════════════
+   GITHUB STATS CARDS
+   ═══════════════════════════════════════════ */
+
+.gh-stats-section {
+    padding: 0 60px 24px;
+}
+
+.gh-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.gh-stat-card {
+    background: #161616;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 12px;
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+}
+
+.gh-stat-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(229, 9, 20, 0.4);
+    box-shadow: 0 8px 32px rgba(229, 9, 20, 0.12);
+}
+
+.gh-stat-icon {
+    font-size: 1.8rem;
+    margin-bottom: 4px;
+}
+
+.gh-stat-value {
+    font-family: var(--font-title);
+    font-size: 2.8rem;
+    color: #fff;
+    line-height: 1;
+}
+
+.gh-stat-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #ccc;
+}
+
+.gh-stat-sub {
+    font-size: 0.72rem;
+    color: #555;
+}
+
+/* Shimmer loading */
+.gh-stat-card.shimmer {
+    overflow: hidden;
+    background: #161616;
+}
+
+.shimmer-inner {
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(90deg, #1a1a1a 25%, #242424 50%, #1a1a1a 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 8px;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* ── Commit Chart ── */
+.gh-chart-container {
+    margin-top: 16px;
+    padding: 16px;
+    background: #161616;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 12px;
+    overflow-x: auto;
+    /* Allow horizontal scroll on mobile */
+    display: flex;
+    justify-content: center;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gh-chart-container:hover {
+    border-color: rgba(229, 9, 20, 0.4);
+    box-shadow: 0 8px 32px rgba(229, 9, 20, 0.12);
+}
+
+.gh-commit-chart {
+    max-width: 100%;
+    min-width: 600px;
+    /* Prevent it from getting too squished */
+    display: block;
+    mix-blend-mode: screen;
+    /* Helps dark areas of the SVG blend with background */
+    opacity: 0.9;
+}
+
+.gh-commit-chart.shimmer {
+    background: linear-gradient(90deg, #1a1a1a 25%, #242424 50%, #1a1a1a 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    mix-blend-mode: normal;
+    border-radius: 4px;
+    min-height: 110px;
+    width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .gh-stats-section {
+        padding: 0 20px 24px;
+    }
+
+    .gh-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .gh-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .gh-stat-value {
+        font-size: 2rem;
+    }
+}

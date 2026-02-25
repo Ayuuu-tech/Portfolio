@@ -1,0 +1,63 @@
+/* ═══════════════════════════════════════════
+   PAGES – base layout & transition
+   ═══════════════════════════════════════════ */
+
+#app {
+    display: none;
+    opacity: 0;
+    transition: opacity .6s ease;
+}
+
+#app.visible {
+    display: block;
+    opacity: 1;
+}
+
+.page {
+    display: none;
+    /* Default: pad top by exact navbar height so content is never hidden */
+    padding-top: 64px;
+    min-height: 100vh;
+    animation: pageFadeIn .4s ease;
+}
+
+.page.active {
+    display: block;
+}
+
+/* Projects hero slides UNDER the transparent navbar (Netflix style) */
+#page-projects {
+    padding-top: 0;
+}
+
+/* All other pages need extra clearance — row header text must be visible below navbar */
+#page-skills,
+#page-resume,
+#page-about,
+#page-contact {
+    padding-top: 64px;
+    /* exact navbar height */
+}
+
+/* Extra breathing room: first content-row in non-hero pages */
+#page-skills>.lc-wrapper:first-child,
+#page-skills>.content-row:first-child,
+#page-resume>.resume-header:first-child,
+#page-resume>.timeline:first-child,
+#page-about>.stats-grid:first-child,
+#page-about>.content-row:first-child,
+#page-contact>.content-row:first-child {
+    margin-top: 20px;
+}
+
+@keyframes pageFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

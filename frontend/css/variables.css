@@ -1,0 +1,93 @@
+/* ═══════════════════════════════════════════
+   DESIGN SYSTEM – CSS Variables & Reset
+   ═══════════════════════════════════════════ */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --black: #0a0a0a;
+  --card-bg: #181818;
+  --red: #E50914;
+  --dark-red: #b20710;
+  --gray: #808080;
+  --text: #ffffff;
+  --font-title: 'Bebas Neue', cursive;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--black);
+  color: var(--text);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Custom Scrollbar ── */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* ── iOS Safe Area (notch / Dynamic Island) ── */
+#navbar {
+  padding-top: env(safe-area-inset-top, 0);
+}
+
+#activity-bar {
+  padding-bottom: env(safe-area-inset-bottom, 0);
+  height: calc(72px + env(safe-area-inset-bottom, 0));
+}
+
+#bottom-nav {
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
+/* ── Smooth scroll ── */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── Prevent text size adjust on orientation change ── */
+body {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* ── Prevent overscroll bounce on iOS ── */
+body {
+  overscroll-behavior: none;
+}
+
+/* ── Better tap highlight ── */
+* {
+  -webkit-tap-highlight-color: rgba(229, 9, 20, 0.15);
+}
+
+/* ── Prevent layout shift from scrollbar ── */
+html {
+  scrollbar-gutter: stable;
+}

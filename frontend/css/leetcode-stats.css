@@ -1,0 +1,243 @@
+/* ═══════════════════════════════════════════
+   LEETCODE STATS CARD
+   ═══════════════════════════════════════════ */
+
+.lc-wrapper {
+    padding-bottom: 32px;
+}
+
+.lc-profile-link {
+    color: #ffa116;
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 600;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.lc-profile-link:hover {
+    opacity: 1;
+}
+
+.lc-card {
+    margin: 16px 60px 0;
+    background: #111;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: border-color 0.3s;
+}
+
+.lc-card:hover {
+    border-color: rgba(255, 161, 22, 0.3);
+}
+
+.lc-inner {
+    display: grid;
+    grid-template-areas:
+        "donut bars"
+        "meta  meta";
+    grid-template-columns: 200px 1fr;
+    gap: 24px 32px;
+    padding: 28px 32px;
+}
+
+/* ── Donut chart ── */
+.lc-donut-wrap {
+    grid-area: donut;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lc-donut {
+    width: 150px;
+    height: 150px;
+    transform: rotate(-90deg);
+}
+
+.lc-donut-circle {
+    transition: stroke-dasharray 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.lc-donut-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lc-total {
+    font-family: var(--font-title);
+    font-size: 2.4rem;
+    color: #ffa116;
+    line-height: 1;
+}
+
+.lc-total-label {
+    font-size: 0.65rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 2px;
+}
+
+/* ── Difficulty bars ── */
+.lc-bars {
+    grid-area: bars;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 18px;
+}
+
+.lc-bar-row {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.lc-bar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+}
+
+.lc-diff {
+    font-weight: 700;
+    font-size: 0.78rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.lc-diff.easy {
+    background: rgba(0, 184, 163, 0.15);
+    color: #00b8a3;
+}
+
+.lc-diff.medium {
+    background: rgba(255, 161, 22, 0.15);
+    color: #ffa116;
+}
+
+.lc-diff.hard {
+    background: rgba(255, 55, 95, 0.15);
+    color: #ff375f;
+}
+
+.lc-count {
+    font-size: 0.78rem;
+    color: #888;
+}
+
+.lc-count em {
+    color: #444;
+    font-style: normal;
+}
+
+.lc-bar-track {
+    height: 8px;
+    background: #1e1e1e;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.lc-bar-fill {
+    height: 100%;
+    width: 0%;
+    border-radius: 4px;
+    transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.easy-fill {
+    background: linear-gradient(90deg, #00b8a3, #00d9c0);
+}
+
+.medium-fill {
+    background: linear-gradient(90deg, #ffa116, #ffc060);
+}
+
+.hard-fill {
+    background: linear-gradient(90deg, #ff375f, #ff6b8a);
+}
+
+/* ── Bottom meta row ── */
+.lc-meta {
+    grid-area: meta;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    background: #0d0d0d;
+    border-radius: 10px;
+    padding: 16px 24px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.lc-meta-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.lc-meta-val {
+    font-family: var(--font-title);
+    font-size: 1.6rem;
+    color: #ffa116;
+}
+
+.lc-meta-key {
+    font-size: 0.68rem;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.lc-meta-divider {
+    width: 1px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.06);
+    margin: 0 8px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 700px) {
+    .lc-card {
+        margin: 16px 16px 0;
+    }
+
+    .lc-wrapper .row-header {
+        padding: 0 16px;
+    }
+
+    .lc-inner {
+        grid-template-areas:
+            "donut donut"
+            "bars  bars"
+            "meta  meta";
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    .lc-donut-wrap {
+        justify-content: center;
+    }
+
+    .lc-meta {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .lc-meta-divider {
+        width: 60px;
+        height: 1px;
+        margin: 0;
+    }
+}

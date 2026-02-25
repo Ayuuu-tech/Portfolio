@@ -1,0 +1,140 @@
+/* ═══════════════════════════════════════════
+   INTRO SCREEN STYLES
+   ═══════════════════════════════════════════ */
+
+#intro-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: opacity .8s ease;
+}
+
+#intro-screen.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#intro-logo {
+    font-family: var(--font-title);
+    font-size: 18rem;
+    color: var(--red);
+    position: relative;
+    animation: introZoom 1.6s cubic-bezier(.23, 1, .32, 1) forwards;
+    filter: blur(20px);
+    opacity: 0;
+    transform: scale(4) rotate(-15deg);
+    text-shadow: 0 0 60px rgba(229, 9, 20, .6);
+}
+
+@keyframes introZoom {
+    to {
+        filter: blur(0);
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+#intro-logo::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -60%;
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .35), transparent);
+    transform: skewX(-25deg);
+    animation: lightSweep 1.2s .8s ease forwards;
+    opacity: 0;
+}
+
+@keyframes lightSweep {
+    0% {
+        left: -60%;
+        opacity: 1;
+    }
+
+    100% {
+        left: 140%;
+        opacity: 0;
+    }
+}
+
+/* Particles */
+.intro-particle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--red);
+    opacity: 0;
+}
+
+@keyframes particleBurst {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Rings */
+.intro-ring {
+    position: absolute;
+    border: 2px solid var(--red);
+    border-radius: 50%;
+    opacity: 0;
+    animation: ringExpand 1.2s ease-out forwards;
+}
+
+@keyframes ringExpand {
+    0% {
+        width: 10px;
+        height: 10px;
+        opacity: .8;
+    }
+
+    100% {
+        width: 300px;
+        height: 300px;
+        opacity: 0;
+    }
+}
+
+/* Glow Pulse */
+@keyframes glowPulse {
+
+    0%,
+    100% {
+        text-shadow: 0 0 30px rgba(229, 9, 20, .4);
+    }
+
+    50% {
+        text-shadow: 0 0 80px rgba(229, 9, 20, .9), 0 0 120px rgba(229, 9, 20, .5);
+    }
+}
+
+/* Tagline */
+#intro-tagline {
+    font-family: var(--font-body);
+    color: #ccc;
+    font-size: 1.1rem;
+    letter-spacing: 12px;
+    text-transform: uppercase;
+    opacity: 0;
+    margin-top: 10px;
+    animation: tagFade .8s 1.8s ease forwards;
+}
+
+@keyframes tagFade {
+    to {
+        opacity: 1;
+    }
+}

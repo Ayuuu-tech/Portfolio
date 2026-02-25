@@ -1,0 +1,138 @@
+/* ═══════════════════════════════════════════
+   CONTENT ROWS
+   ═══════════════════════════════════════════ */
+
+.content-row {
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 2;
+    /* Fade-in animation — driven by IntersectionObserver */
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    padding-bottom: 12px;
+}
+
+.content-row.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Force rows visible if observer doesn't fire (e.g. page already in viewport) */
+#projects-below-hero .content-row,
+#page-skills .content-row,
+#page-about .content-row,
+#page-resume .content-row,
+#page-contact .content-row {
+    opacity: 1;
+    transform: none;
+    transition: none;
+}
+
+.content-row:hover {
+    z-index: 100;
+}
+
+/* ── Row header ── */
+.row-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 48px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.row-header h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    transition: color .2s;
+}
+
+.row-arrow {
+    color: var(--red);
+    font-size: 1.1rem;
+    opacity: 0;
+    transform: translateX(-8px);
+    transition: all .3s;
+}
+
+.row-header:hover .row-arrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.row-header:hover h3 {
+    color: var(--red);
+}
+
+/* ── Scroll container ── */
+.row-container {
+    position: relative;
+    overflow-x: clip;
+    overflow-y: visible;
+}
+
+.row-scroll {
+    display: flex;
+    gap: 10px;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+
+    /* Sufficient padding for card hover-preview to show below */
+    padding: 16px 48px 200px 48px;
+    margin-bottom: -190px;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    cursor: grab;
+    -webkit-overflow-scrolling: touch;
+}
+
+.row-scroll.dragging {
+    cursor: grabbing;
+    scroll-behavior: auto;
+    user-select: none;
+}
+
+.row-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+/* ── Scroll buttons ── */
+.scroll-btn {
+    position: absolute;
+    top: 16px;
+    width: 44px;
+    height: 180px;
+    background: linear-gradient(to right, rgba(10, 10, 10, 0.9), rgba(20, 20, 20, 0.7));
+    border: none;
+    color: #fff;
+    font-size: 1.6rem;
+    cursor: pointer;
+    z-index: 20;
+    opacity: 0;
+    transition: opacity .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.row-container:hover .scroll-btn {
+    opacity: 1;
+}
+
+.scroll-btn:hover {
+    background: rgba(0, 0, 0, .95);
+}
+
+.scroll-left {
+    left: 0;
+    border-radius: 0 4px 4px 0;
+}
+
+.scroll-right {
+    right: 0;
+    border-radius: 4px 0 0 4px;
+}

@@ -1,0 +1,1050 @@
+/* ═══════════════════════════════════════════
+   RESPONSIVE — Mobile-first
+   Breakpoints:
+     ≤ 1024px  Tablet landscape
+     ≤ 768px   Tablet portrait / large phone
+     ≤ 600px   Standard phone
+     ≤ 480px   Small phone (iPhone SE, Galaxy A)
+     ≤ 360px   Very small phone
+   ═══════════════════════════════════════════ */
+
+/* ───────────────────────────────────────────
+   TABLET LANDSCAPE (≤ 1024px)
+─────────────────────────────────────────── */
+@media (max-width: 1024px) {
+    #navbar {
+        padding: 0 32px;
+    }
+
+    .hero-content h1 {
+        font-size: 3.8rem;
+    }
+
+    .hero-watermark {
+        font-size: 12rem;
+    }
+
+    .hero-dots {
+        right: 32px;
+    }
+
+    .row-header {
+        padding: 0 32px;
+    }
+
+    .row-scroll {
+        padding: 16px 32px 200px;
+    }
+
+    .gh-stats-section {
+        padding: 0 32px 24px;
+    }
+
+    .gh-stats-grid {
+        gap: 12px;
+    }
+
+    .stats-grid {
+        padding: 0 32px 24px;
+        gap: 14px;
+    }
+
+    .timeline {
+        padding: 0 48px 40px;
+    }
+
+    .timeline::before {
+        left: 68px;
+    }
+
+    .filter-bar {
+        padding: 0 32px 20px;
+    }
+
+    .lc-card {
+        margin: 16px 32px 0;
+    }
+
+    .lc-wrapper .row-header {
+        padding: 0 32px;
+    }
+
+    .resume-header {
+        padding: 24px 32px 8px;
+    }
+
+    .copy-email-bar {
+        margin: 0 32px 24px;
+    }
+}
+
+/* ───────────────────────────────────────────
+   TABLET / LARGE PHONE (≤ 768px)
+─────────────────────────────────────────── */
+@media (max-width: 768px) {
+
+    /* ── Navbar ── */
+    #navbar {
+        padding: 0 16px;
+        height: 56px;
+    }
+
+    .nav-logo {
+        font-size: 1.8rem;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+
+    #hamburger-btn {
+        display: flex;
+    }
+
+    #search-input {
+        width: 110px;
+        font-size: 0.78rem;
+    }
+
+    #search-input:focus {
+        width: 150px;
+    }
+
+    #profile-btn {
+        display: none;
+    }
+
+    #theme-toggle {
+        font-size: 1rem;
+    }
+
+    /* ── Page ── */
+    .page {
+        padding-top: 56px;
+        padding-bottom: 140px;
+        /* clearance for bottom nav + activity bar */
+    }
+
+    #page-projects {
+        padding-top: 0;
+    }
+
+    /* hero slides under navbar */
+    #page-skills,
+    #page-resume,
+    #page-about,
+    #page-contact {
+        padding-top: 56px;
+    }
+
+    #projects-below-hero {
+        padding-top: 0;
+    }
+
+    /* ── Hero ── */
+    .hero {
+        height: 58vh;
+        min-height: 300px;
+    }
+
+    .hero-slide {
+        padding: 0 16px;
+        align-items: flex-end;
+        padding-bottom: 60px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-content h1 {
+        font-size: 2.4rem;
+    }
+
+    .hero-content p {
+        font-size: 0.82rem;
+        max-width: 100%;
+    }
+
+    .hero-watermark {
+        font-size: 7rem;
+        right: 10px;
+        opacity: 0.07;
+    }
+
+    .hero-tags {
+        gap: 6px;
+        margin-bottom: 14px;
+    }
+
+    .hero-tags span {
+        font-size: 0.65rem;
+    }
+
+    .hero-btns button {
+        padding: 9px 18px;
+        font-size: 0.82rem;
+    }
+
+    .hero-dots {
+        bottom: 14px;
+        right: 14px;
+    }
+
+    /* ── Rows & Cards ── */
+    .row-header {
+        padding: 0 14px;
+        margin-bottom: 8px;
+    }
+
+    .row-header h3 {
+        font-size: 1rem;
+    }
+
+    .row-scroll {
+        padding: 12px 14px 150px;
+        gap: 8px;
+        margin-bottom: -140px;
+    }
+
+    .scroll-btn {
+        display: none;
+    }
+
+    .card {
+        min-width: 150px;
+        height: 95px;
+    }
+
+    .card-inner {
+        height: 95px;
+    }
+
+    .card-emoji {
+        font-size: 3rem;
+    }
+
+    .card-title {
+        font-size: 0.72rem;
+        bottom: 7px;
+        left: 8px;
+        right: 8px;
+    }
+
+    .card-preview {
+        top: 95px;
+        padding: 10px;
+    }
+
+    .preview-actions button {
+        width: 32px;
+        height: 32px;
+        font-size: 0.82rem;
+    }
+
+    .preview-desc {
+        font-size: 0.65rem;
+    }
+
+    .preview-tags span {
+        font-size: 0.58rem;
+        padding: 2px 6px;
+    }
+
+    .card:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    .card:active {
+        transform: scale(0.97);
+    }
+
+    .top10-num {
+        font-size: 5rem;
+        left: -22px;
+    }
+
+    /* ── GitHub stats ── */
+    .gh-stats-section {
+        padding: 0 12px 20px;
+    }
+
+    .gh-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .gh-stat-card {
+        padding: 16px 14px;
+    }
+
+    .gh-stat-value {
+        font-size: 2.2rem;
+    }
+
+    /* ── Filter bar ── */
+    .filter-bar {
+        padding: 8px 12px 16px;
+        gap: 7px;
+    }
+
+    .filter-btn {
+        font-size: 0.72rem;
+        padding: 6px 12px;
+    }
+
+    /* ── Stats counter ── */
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 12px 20px;
+        gap: 10px;
+    }
+
+    .stat-item {
+        padding: 20px 12px;
+    }
+
+    .stat-number {
+        font-size: 2.8rem;
+    }
+
+    /* ── Timeline ── */
+    .timeline {
+        padding: 0 12px 40px;
+    }
+
+    .timeline::before {
+        left: 22px;
+    }
+
+    .timeline-year {
+        padding-left: 40px;
+        font-size: 1.1rem;
+    }
+
+    .timeline-item {
+        padding: 12px 0 12px 44px;
+    }
+
+    .timeline-item::before {
+        top: 18px;
+        width: 12px;
+        height: 12px;
+    }
+
+    .timeline-card {
+        padding: 14px 16px;
+    }
+
+    .timeline-card h4 {
+        font-size: 0.9rem;
+    }
+
+    .timeline-card p {
+        font-size: 0.78rem;
+    }
+
+    .timeline-card-tags span {
+        font-size: 0.62rem;
+    }
+
+    /* ── Resume header ── */
+    .resume-header {
+        padding: 20px 12px 8px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .resume-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .download-resume-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* ── LeetCode ── */
+    .lc-card {
+        margin: 12px 12px 0;
+    }
+
+    .lc-wrapper .row-header {
+        padding: 0 12px;
+    }
+
+    .lc-inner {
+        grid-template-areas: "donut donut" "bars bars" "meta meta";
+        grid-template-columns: 1fr;
+        padding: 16px;
+        gap: 16px;
+    }
+
+    /* ── Modal (bottom sheet) ── */
+    #modal-overlay {
+        padding: 0;
+        align-items: flex-end;
+    }
+
+    .modal-box {
+        max-width: 100%;
+        border-radius: 20px 20px 0 0;
+        max-height: 92vh;
+        overflow-y: auto;
+    }
+
+    .modal-hero {
+        height: 180px;
+    }
+
+    .modal-body h2 {
+        font-size: 1.6rem;
+    }
+
+    .modal-body {
+        padding: 0 20px 24px;
+    }
+
+    .modal-actions {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .modal-actions button {
+        width: 100%;
+        padding: 13px;
+    }
+
+    .modal-link-btn {
+        width: 100%;
+    }
+
+    .modal-link-btn button {
+        width: 100%;
+    }
+
+    /* ── Contact ── */
+    .contact-form {
+        padding: 0 12px;
+    }
+
+    .copy-email-bar {
+        margin: 0 12px 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .copy-email-btn {
+        width: 100%;
+    }
+
+    /* ── Profile screen ── */
+    #profile-screen h2 {
+        font-size: 1rem;
+        letter-spacing: 3px;
+        margin-bottom: 32px;
+    }
+
+    .profile-grid {
+        gap: 20px;
+        padding: 0 16px;
+    }
+
+    .profile-icon {
+        width: 90px;
+        height: 90px;
+        font-size: 2.4rem;
+    }
+
+    /* ── Intro ── */
+    #intro-logo {
+        font-size: 8rem;
+    }
+
+    #intro-tagline {
+        font-size: 0.75rem;
+        letter-spacing: 8px;
+    }
+
+    /* ── Activity bar ── */
+    #activity-bar {
+        height: 60px;
+        padding: 0 12px;
+        gap: 10px;
+        border-top: none;
+        /* Remove separator line between bottom nav and activity bar */
+    }
+
+    .ab-disc {
+        width: 36px;
+        height: 36px;
+        font-size: 1.2rem;
+    }
+
+    .ab-left {
+        min-width: 140px;
+        gap: 10px;
+    }
+
+    #ab-repo {
+        font-size: 0.8rem;
+    }
+
+    .ab-right {
+        display: none;
+    }
+
+    .ab-bar-label {
+        display: none;
+    }
+
+    /* ── Bottom nav ── */
+    #bottom-nav {
+        display: block;
+        bottom: 60px;
+    }
+
+    .bnav-label {
+        font-size: 0.55rem;
+    }
+
+    /* ── Help button ── */
+    #help-btn {
+        bottom: 136px;
+        right: 16px;
+    }
+
+    /* ── Shortcuts ── */
+    .shortcuts-box {
+        padding: 24px 20px;
+    }
+
+    .shortcut-row {
+        font-size: 0.8rem;
+    }
+}
+
+/* ───────────────────────────────────────────
+   STANDARD PHONE (≤ 600px)
+─────────────────────────────────────────── */
+@media (max-width: 600px) {
+    #search-input {
+        width: 90px;
+    }
+
+    #search-input:focus {
+        width: 130px;
+    }
+
+    .hero {
+        height: 52vh;
+        min-height: 260px;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        display: none;
+    }
+
+    .hero-watermark {
+        display: none;
+    }
+
+    .card {
+        min-width: 135px;
+        height: 85px;
+    }
+
+    .card-inner {
+        height: 85px;
+    }
+
+    .card-preview {
+        top: 85px;
+    }
+
+    .card-emoji {
+        font-size: 2.4rem;
+    }
+
+    .card-title {
+        font-size: 0.65rem;
+        bottom: 5px;
+    }
+
+    .profile-grid {
+        gap: 14px;
+    }
+
+    .profile-icon {
+        width: 80px;
+        height: 80px;
+        font-size: 2rem;
+    }
+
+    .gh-stat-value {
+        font-size: 1.8rem;
+    }
+
+    .gh-stat-sub {
+        display: none;
+    }
+
+    .stat-number {
+        font-size: 2.4rem;
+    }
+
+    .stat-label {
+        font-size: 0.72rem;
+    }
+
+    .modal-hero {
+        height: 150px;
+    }
+
+    .modal-body h2 {
+        font-size: 1.4rem;
+    }
+
+    /* Filter bar — horizontal scroll, no wrap */
+    .filter-bar {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        padding-bottom: 12px;
+    }
+
+    .filter-bar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .filter-btn {
+        flex-shrink: 0;
+    }
+
+    #intro-logo {
+        font-size: 5.5rem;
+    }
+
+    #intro-tagline {
+        font-size: 0.65rem;
+        letter-spacing: 5px;
+    }
+}
+
+/* ───────────────────────────────────────────
+   SMALL PHONE (≤ 480px)
+─────────────────────────────────────────── */
+@media (max-width: 480px) {
+    #navbar {
+        padding: 0 12px;
+        height: 52px;
+    }
+
+    .nav-logo {
+        font-size: 1.5rem;
+    }
+
+    #search-input {
+        width: 80px;
+    }
+
+    #search-input:focus {
+        width: 115px;
+    }
+
+    .page {
+        padding-top: 52px;
+    }
+
+    .hero {
+        height: 50vh;
+        min-height: 240px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.75rem;
+    }
+
+    .hero-btns button {
+        padding: 8px 14px;
+        font-size: 0.78rem;
+    }
+
+    .hero-dot {
+        width: 8px;
+        height: 8px;
+    }
+
+    .hero-dot.active {
+        width: 22px;
+    }
+
+    .card {
+        min-width: 120px;
+        height: 78px;
+    }
+
+    .card-inner {
+        height: 78px;
+    }
+
+    .card-preview {
+        top: 78px;
+        padding: 8px;
+    }
+
+    .card-emoji {
+        font-size: 2rem;
+    }
+
+    .card-title {
+        font-size: 0.6rem;
+    }
+
+    .row-header h3 {
+        font-size: 0.88rem;
+    }
+
+    .row-scroll {
+        padding: 10px 10px 160px;
+        gap: 6px;
+        margin-bottom: -150px;
+    }
+
+    #profile-screen h2 {
+        font-size: 0.88rem;
+        letter-spacing: 2px;
+        margin-bottom: 24px;
+    }
+
+    .profile-icon {
+        width: 72px;
+        height: 72px;
+        font-size: 1.75rem;
+    }
+
+    .profile-label {
+        font-size: 0.65rem;
+    }
+
+    #intro-logo {
+        font-size: 4.5rem;
+    }
+
+    .modal-box {
+        max-height: 95vh;
+    }
+
+    .modal-hero {
+        height: 130px;
+    }
+
+    .modal-body h2 {
+        font-size: 1.25rem;
+    }
+
+    .gh-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .gh-stat-card {
+        padding: 12px 10px;
+    }
+
+    .gh-stat-value {
+        font-size: 1.6rem;
+    }
+
+    .stat-item {
+        padding: 16px 10px;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    #activity-bar {
+        padding: 0 10px;
+        gap: 8px;
+        height: 56px;
+    }
+
+    .ab-disc {
+        width: 32px;
+        height: 32px;
+    }
+
+    .ab-center {
+        display: none;
+    }
+
+    .bnav-item {
+        padding: 4px 6px;
+    }
+
+    .bnav-icon {
+        font-size: 1.1rem;
+    }
+
+    #bottom-nav {
+        bottom: 56px;
+    }
+
+    .bnav-label {
+        font-size: 0.5rem;
+    }
+
+    #toast-container {
+        bottom: 78px;
+        left: 10px;
+        right: 10px;
+    }
+
+    .toast {
+        font-size: 0.78rem;
+        padding: 10px 12px;
+    }
+}
+
+/* ───────────────────────────────────────────
+   VERY SMALL PHONE (≤ 360px)
+─────────────────────────────────────────── */
+@media (max-width: 360px) {
+    #navbar {
+        padding: 0 10px;
+    }
+
+    .nav-logo {
+        font-size: 1.3rem;
+    }
+
+    #search-input {
+        display: none;
+    }
+
+    #theme-toggle {
+        display: none;
+    }
+
+    .hero {
+        height: 45vh;
+        min-height: 220px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero-badge {
+        display: none;
+    }
+
+    .card {
+        min-width: 110px;
+        height: 72px;
+    }
+
+    .card-inner {
+        height: 72px;
+    }
+
+    .card-preview {
+        top: 72px;
+    }
+
+    .card-emoji {
+        font-size: 1.7rem;
+    }
+
+    .profile-icon {
+        width: 64px;
+        height: 64px;
+        font-size: 1.5rem;
+    }
+
+    #intro-logo {
+        font-size: 3.8rem;
+    }
+
+    #intro-tagline {
+        font-size: 0.55rem;
+        letter-spacing: 3px;
+    }
+
+    .gh-stat-value {
+        font-size: 1.4rem;
+    }
+
+    .stat-number {
+        font-size: 1.8rem;
+    }
+}
+
+/* ───────────────────────────────────────────
+   TOUCH DEVICE ENHANCEMENTS
+─────────────────────────────────────────── */
+@media (hover: none) and (pointer: coarse) {
+    .card:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    .gh-stat-card:hover {
+        transform: none;
+    }
+
+    .timeline-card:hover {
+        transform: none;
+    }
+
+
+    .profile-card:hover .profile-icon {
+        transform: none;
+    }
+
+    .card:active {
+        transform: scale(0.96);
+        transition: transform 0.1s;
+    }
+
+    .filter-btn:active {
+        transform: scale(0.95);
+    }
+
+    .download-resume-btn:active {
+        transform: scale(0.97);
+    }
+
+    .form-submit:active {
+        transform: scale(0.97);
+    }
+
+    .bnav-item:active {
+        transform: scale(0.88);
+    }
+
+    .profile-icon:active {
+        transform: scale(0.94);
+    }
+
+    .scroll-btn {
+        display: none;
+    }
+
+    #modal-overlay {
+        padding: 0;
+        align-items: flex-end;
+    }
+
+    .modal-box {
+        border-radius: 20px 20px 0 0;
+        max-height: 90vh;
+    }
+}
+
+/* ───────────────────────────────────────────
+   LANDSCAPE PHONE
+─────────────────────────────────────────── */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        height: 100vh;
+    }
+
+    .hero-slide {
+        align-items: center;
+        padding-bottom: 0;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content p {
+        display: none;
+    }
+
+    .hero-tags {
+        display: none;
+    }
+
+    .hero-btns button {
+        padding: 7px 14px;
+        font-size: 0.75rem;
+    }
+
+    #activity-bar {
+        display: none;
+    }
+
+    #bottom-nav {
+        display: none;
+    }
+
+    #help-btn {
+        bottom: 16px;
+    }
+
+    .page {
+        padding-bottom: 0;
+    }
+
+    #modal-overlay {
+        padding: 20px;
+        align-items: center;
+    }
+
+    .modal-box {
+        border-radius: 8px;
+        max-height: 90vh;
+    }
+
+    .modal-hero {
+        height: 100px;
+    }
+}
+
+/* ───────────────────────────────────────────
+   PRINT
+─────────────────────────────────────────── */
+@media print {
+
+    #navbar,
+    #activity-bar,
+    #bottom-nav,
+    #help-btn,
+    #hamburger-btn,
+    #cursor-spotlight,
+    #toast-container,
+    #mobile-menu,
+    #mobile-overlay {
+        display: none !important;
+    }
+
+    body {
+        background: #fff;
+        color: #000;
+    }
+
+    .page {
+        display: block;
+        padding: 0;
+    }
+
+    .hero {
+        display: none;
+    }
+
+    .filter-bar {
+        display: none;
+    }
+}

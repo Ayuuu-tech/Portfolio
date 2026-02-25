@@ -1,0 +1,114 @@
+/* ═══════════════════════════════════════════
+   CONTACT FORM
+   ═══════════════════════════════════════════ */
+
+.contact-form {
+    max-width: 560px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.contact-form h3 {
+    font-family: var(--font-title);
+    font-size: 2rem;
+    margin-bottom: 24px;
+    color: var(--red);
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    font-size: .8rem;
+    color: var(--gray);
+    margin-bottom: 6px;
+    letter-spacing: .5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    background: #222;
+    border: 1px solid #333;
+    color: #fff;
+    padding: 12px 14px;
+    border-radius: 4px;
+    font-size: .9rem;
+    font-family: var(--font-body);
+    outline: none;
+    transition: border-color .3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--red);
+}
+
+.form-group textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+.form-submit {
+    background: var(--red);
+    color: #fff;
+    border: none;
+    padding: 12px 32px;
+    border-radius: 4px;
+    font-size: .95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background .3s, transform .2s;
+}
+
+.form-submit:hover {
+    background: var(--dark-red);
+    transform: scale(1.02);
+}
+
+/* ── Copy Email Bar ── */
+.copy-email-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #141414;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 14px 20px;
+    margin: 0 60px 24px;
+}
+
+.copy-email-label {
+    font-size: 0.9rem;
+    color: #bbb;
+    font-family: monospace;
+}
+
+.copy-email-btn {
+    background: var(--red);
+    border: none;
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    font-family: var(--font-body);
+}
+
+.copy-email-btn:hover {
+    background: var(--dark-red);
+    transform: scale(1.04);
+}
+
+@media (max-width: 768px) {
+    .copy-email-bar {
+        margin: 0 16px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}

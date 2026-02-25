@@ -1,0 +1,183 @@
+/* ═══════════════════════════════════════════
+   MODAL
+   ═══════════════════════════════════════════ */
+
+#modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9500;
+    background: rgba(0, 0, 0, .75);
+    backdrop-filter: blur(6px);
+    display: none;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 60px 20px;
+    overflow-y: auto;
+}
+
+#modal-overlay.open {
+    display: flex;
+}
+
+.modal-box {
+    background: #181818;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 640px;
+    overflow: hidden;
+    animation: modalIn .45s cubic-bezier(.175, .885, .32, 1.275) forwards;
+    transform: scale(.8) translateY(40px);
+    opacity: 0;
+}
+
+@keyframes modalIn {
+    to {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-hero {
+    height: 280px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 6rem;
+}
+
+.modal-hero-gradient {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(transparent, #181818);
+}
+
+.modal-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, .6);
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background .2s;
+}
+
+.modal-close:hover {
+    background: rgba(229, 9, 20, .8);
+}
+
+.modal-body {
+    padding: 0 28px 28px;
+}
+
+.modal-body h2 {
+    font-family: var(--font-title);
+    font-size: 2.4rem;
+    margin-bottom: 8px;
+}
+
+.modal-body p {
+    color: #aaa;
+    font-size: .9rem;
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+
+.modal-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.modal-tags span {
+    background: rgba(255, 255, 255, .08);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: .75rem;
+    color: #bbb;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.modal-actions button {
+    padding: 10px 22px;
+    border-radius: 4px;
+    border: none;
+    font-weight: 700;
+    font-size: .85rem;
+    cursor: pointer;
+    transition: background .3s;
+}
+
+.modal-actions .btn-primary {
+    background: var(--red);
+    color: #fff;
+}
+
+.modal-actions .btn-primary:hover {
+    background: var(--dark-red);
+}
+
+.modal-actions .btn-secondary {
+    background: rgba(255, 255, 255, .15);
+    color: #fff;
+}
+
+.modal-actions .btn-secondary:hover {
+    background: rgba(255, 255, 255, .25);
+}
+
+/* ── Modal hero emoji (replaces inline style) ── */
+.modal-hero-emoji {
+    position: relative;
+    z-index: 1;
+    font-size: 6rem;
+}
+
+/* ── Modal link wrapper ── */
+.modal-link-btn {
+    text-decoration: none;
+}
+
+/* ── Proficiency bar (replaces inline styles) ── */
+.modal-level {
+    margin-bottom: 16px;
+}
+
+.modal-level-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: .8rem;
+    color: #aaa;
+    margin-bottom: 4px;
+}
+
+.modal-level-track {
+    height: 6px;
+    background: #333;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.modal-level-fill {
+    height: 100%;
+    background: var(--red);
+    border-radius: 3px;
+    transition: width .8s ease;
+}

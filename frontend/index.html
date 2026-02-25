@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Ayushmaan" />
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <!-- ── Primary SEO ── -->
+    <title>Ayushmaan Yadav | Full-Stack Developer Portfolio</title>
+    <meta name="description"
+        content="Ayushmaan Yadav — B.Tech CS student & Full-Stack Developer. Explore my projects, skills, resume and more in this Netflix-style interactive portfolio." />
+    <meta name="author" content="Ayushmaan Yadav" />
+    <meta name="keywords"
+        content="Ayushmaan Yadav, Developer Portfolio, Full-Stack, Node.js, React, Python, AI, MongoDB" />
+
+    <!-- ── Open Graph ── -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Ayushmaan Yadav | Full-Stack Developer Portfolio" />
+    <meta property="og:description"
+        content="B.Tech CS student building full-stack apps, AI tools & IoT projects. Netflix-style interactive portfolio." />
+    <meta property="og:url" content="https://ayushmaanyadav.me" />
+    <meta property="og:image" content="https://ayushmaanyadav.me/og-image.png" />
+
+    <!-- ── Twitter Card ── -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ayushmaan Yadav | Developer Portfolio" />
+    <meta name="twitter:description" content="Netflix-style portfolio: Projects, Skills, Resume & Contact." />
+    <meta name="twitter:image" content="https://ayushmaanyadav.me/og-image.png" />
+
+    <!-- ── Favicon ── -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>" />
+
+    <!-- ── Fonts ── -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap"
+        rel="stylesheet" />
+
+    <!-- ── Stylesheets ── -->
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/toast.css" />
+    <link rel="stylesheet" href="css/activity-bar.css" />
+    <link rel="stylesheet" href="css/github-stats.css" />
+    <link rel="stylesheet" href="css/features.css" />
+    <link rel="stylesheet" href="css/intro.css" />
+    <link rel="stylesheet" href="css/profile.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+    <link rel="stylesheet" href="css/hero.css" />
+    <link rel="stylesheet" href="css/cards.css" />
+    <link rel="stylesheet" href="css/rows.css" />
+    <link rel="stylesheet" href="css/modal.css" />
+    <link rel="stylesheet" href="css/contact.css" />
+    <link rel="stylesheet" href="css/leetcode-stats.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+</head>
+
+<body>
+
+    <!-- ═══════ CURSOR SPOTLIGHT ═══════ -->
+    <div id="cursor-spotlight"></div>
+
+    <!-- ═══════ PAGE TRANSITION ═══════ -->
+    <div class="page-transition-overlay" id="page-transition"></div>
+
+    <!-- ═══════ PULL-TO-REFRESH INDICATOR ═══════ -->
+    <div id="ptr-indicator">↓ Pull to refresh</div>
+
+    <!-- ═══════ INTRO SCREEN ═══════ -->
+    <div id="intro-screen">
+        <div id="intro-logo">Ayushmaan</div>
+        <div id="intro-tagline">Developer Portfolio</div>
+    </div>
+
+    <!-- ═══════ PROFILE SELECTION ═══════ -->
+    <div id="profile-screen">
+        <h2>Who is browsing?</h2>
+        <div class="profile-grid" id="profile-grid"></div>
+    </div>
+
+    <!-- ═══════ MODAL ═══════ -->
+    <div id="modal-overlay">
+        <div class="modal-box" id="modal-box">
+            <div class="modal-hero" id="modal-hero">
+                <button class="modal-close" id="modal-close" aria-label="Close modal">✕</button>
+                <div class="modal-hero-gradient"></div>
+            </div>
+            <div class="modal-body" id="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- ═══════ KEYBOARD SHORTCUTS MODAL ═══════ -->
+    <div id="shortcuts-modal">
+        <div class="shortcuts-box">
+            <h3>⌨️ Keyboard Shortcuts</h3>
+            <div class="shortcut-row">
+                <span>Go to Projects</span>
+                <span class="shortcut-key">H</span>
+            </div>
+            <div class="shortcut-row">
+                <span>Focus Search</span>
+                <span class="shortcut-key">S</span>
+            </div>
+            <div class="shortcut-row">
+                <span>Close Modal</span>
+                <span class="shortcut-key">Esc</span>
+            </div>
+            <div class="shortcut-row">
+                <span>Switch Pages</span>
+                <span class="shortcut-key">1 – 5</span>
+            </div>
+            <div class="shortcut-row">
+                <span>This help panel</span>
+                <span class="shortcut-key">?</span>
+            </div>
+            <button class="shortcuts-close" id="shortcuts-close">Got it!</button>
+        </div>
+    </div>
+
+    <!-- ═══════ MAIN APP ═══════ -->
+    <div id="app">
+        <!-- Navbar -->
+        <nav id="navbar" role="navigation" aria-label="Main navigation">
+            <div class="nav-logo" id="nav-logo" role="button" tabindex="0" aria-label="Go to Projects">Ayushmaan</div>
+            <div class="nav-links" id="nav-links"></div>
+            <div class="nav-right">
+                <input type="text" id="search-input" placeholder="Search…" aria-label="Search projects and skills" />
+                <button id="profile-btn" aria-label="Switch profile">👤 Profiles</button>
+                <button id="hamburger-btn" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobile-menu" aria-hidden="true">
+            <div id="mobile-nav-links"></div>
+        </div>
+        <div id="mobile-overlay"></div>
+
+        <!-- Pages -->
+        <div id="page-projects" class="page"></div>
+        <div id="page-skills" class="page"></div>
+        <div id="page-resume" class="page"></div>
+        <div id="page-about" class="page"></div>
+        <div id="page-contact" class="page"></div>
+    </div>
+
+    <!-- ═══════ NOW CODING ACTIVITY BAR ═══════ -->
+    <div id="activity-bar">
+        <div class="ab-left">
+            <div class="ab-disc" id="ab-emoji">🚀</div>
+            <div class="ab-meta">
+                <div class="ab-status">
+                    <span class="ab-pulse"></span>
+                    Now Coding
+                </div>
+                <div id="ab-repo">Portfolio</div>
+                <div id="ab-tech">HTML + CSS + Vanilla JS</div>
+            </div>
+        </div>
+        <div class="ab-center">
+            <div id="ab-track">
+                <div id="ab-fill"></div>
+                <div id="ab-knob"></div>
+            </div>
+            <div class="ab-bar-label">Session progress</div>
+        </div>
+        <div class="ab-right">
+            <span>🔀 GitHub</span>
+            <span id="ab-time">🕐 Live</span>
+        </div>
+    </div>
+
+    <!-- ═══════ BOTTOM MOBILE NAV ═══════ -->
+    <div id="bottom-nav"></div>
+
+    <!-- ═══════ HELP BUTTON ═══════ -->
+    <button id="help-btn" aria-label="Keyboard shortcuts">?</button>
+
+    <!-- JavaScript (order matters) -->
+    <script src="js/data.js"></script>
+    <script src="js/toast.js"></script>
+    <script src="js/features.js"></script>
+    <script src="js/github-stats.js"></script>
+    <script src="js/activity-bar.js"></script>
+    <script src="js/intro.js"></script>
+    <script src="js/profile.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/hero.js"></script>
+    <script src="js/cards.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/pages/projects.js"></script>
+    <script src="js/pages/skills.js"></script>
+    <script src="js/pages/resume.js"></script>
+    <script src="js/pages/about.js"></script>
+    <script src="js/pages/contact.js"></script>
+    <script src="js/leetcode-stats.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
