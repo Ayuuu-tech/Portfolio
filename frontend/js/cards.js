@@ -49,7 +49,7 @@ function createCard(item, options = {}) {
     ${rankHtml}
     <div class="card-inner" style="${bg}">
       ${badges}
-      <div class="card-emoji">${item.emoji || item.icon || ''}</div>
+      <div class="card-emoji">${(item.emoji || item.icon || '').startsWith('http') ? `<img src="${item.emoji || item.icon}" style="width:55px; height:55px; object-fit:contain; filter:drop-shadow(0 4px 6px rgba(0,0,0,0.4));" alt="${item.name || item.title || ''}" />` : (item.emoji || item.icon || '')}</div>
       <div class="card-gradient"></div>
       <div class="card-title">${item.title || item.name || ''}</div>
       ${isSkill ? `<div class="skill-bar-wrap"><div class="skill-bar" style="width:${item.level || 0}%"></div></div>` : ''}

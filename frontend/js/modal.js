@@ -20,7 +20,10 @@ function openModal(item) {
 
   const emojiSpan = document.createElement('span');
   emojiSpan.className = 'modal-hero-emoji';
-  emojiSpan.textContent = item.emoji || item.icon || '';
+  const iconStr = item.emoji || item.icon || '';
+  emojiSpan.innerHTML = iconStr.startsWith('http')
+    ? `<img src="${iconStr}" style="width:100px; height:100px; object-fit:contain; filter:drop-shadow(0 4px 10px rgba(0,0,0,0.4));" alt="${item.name || item.title || ''}" />`
+    : iconStr;
   hero.appendChild(emojiSpan);
 
   // ── Proficiency bar (skills) via CSS classes ──
@@ -46,7 +49,7 @@ function openModal(item) {
     <div class="modal-tags">${(item.tags || []).map(t => `<span>${t}</span>`).join('')}</div>
     <div class="modal-actions">
       ${item.link
-      ? `<a href="${item.link}" target="_blank" rel="noopener noreferrer" class="modal-link-btn"><button class="btn-primary">Open Link →</button></a>`
+      ? `<a href="${item.link}" target="_blank" rel="noopener noreferrer" class="modal-link-btn"><button class="btn-primary">${item.category === 'Web' || item.category === 'Languages' || item.category === 'Tools' || item.category === 'Databases & Cloud' || item.category === 'Concepts' ? 'Read Original Manual 📖' : 'Open Link ↗'}</button></a>`
       : '<button class="btn-primary">▶ View Details</button>'}
       <button class="btn-secondary" id="modal-close-body">Close</button>
     </div>`;
