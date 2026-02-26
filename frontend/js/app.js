@@ -21,6 +21,17 @@ function initScrollAnimations() {
 function init() {
     initNavbar();
 
+    // ── Inject hidden SEO content to boost "Ayushmaan" on page load ──
+    const seoDiv = document.createElement('div');
+    seoDiv.style.display = 'none';
+    seoDiv.style.visibility = 'hidden';
+    seoDiv.innerHTML = `
+        <h1>Ayushmaan Yadav - Portfolio</h1>
+        <h2>Ayushmaan - Software Engineer & Full-Stack Developer</h2>
+        <p>I am Ayushmaan, a web developer, engineer, and tech student. Known as Ayushmaan Yadav, I build optimized web applications.</p>
+    `;
+    document.body.insertBefore(seoDiv, document.body.firstChild);
+
     // Build all pages
     buildProjectsPage();
     buildSkillsPage();
