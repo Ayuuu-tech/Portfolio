@@ -3,7 +3,7 @@
 A fully dynamic, Netflix-inspired developer portfolio website. Built natively with HTML, CSS, and Vanilla JavaScript, ensuring it is incredibly fast, responsive, and easy to deploy for free as a purely static site.
 
 ## 🚀 Live Demo
-*[Insert your live Render link here, e.g., https://ayushmaan-portfolio.onrender.com]*
+*https://ayushmaanyadav.me/*
 
 ## 🎯 Features
 
@@ -45,19 +45,6 @@ To make this your own, simply edit the following files:
 3. **`frontend/js/leetcode-stats.js`**: Update the `LEETCODE_USER` constant at the top to your LeetCode username.
 4. **`frontend/js/pages/contact.js`**: Ensure the email address in the DOM and FormSubmit endpoint points to your actual email.
 5. **`frontend/resume.pdf`**: Replace the file with your actual PDF resume.
-
-## 🌐 How to Deploy (Render.com)
-
-Since the entire app runs completely client-side in the browser, deployment takes less than 30 seconds for free on Render.
-
-1. Create a free account at [Render.com](https://render.com/).
-2. Click **New +** -> **Static Site**.
-3. Connect this GitHub repository.
-4. Under the configuration settings:
-   - **Branch:** `main`
-   - **Build Command:** *(Leave entirely blank)*
-   - **Publish Directory:** `frontend`
-5. Click **Create Static Site**.
 
 Your stunning new portfolio will instantly be live on the internet! 🚀
 
